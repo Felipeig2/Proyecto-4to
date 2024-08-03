@@ -1,0 +1,20 @@
+body{
+  text-align: center;
+  font-family: monospace;
+  background-color: rgb(202, 194, 43);
+  color: blue;
+}
+h2{
+  font-size: 30px
+}
+p{
+  font-size: 50px;
+
+}
+h1{
+  background-color: blue;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 15px;
+  color: rgb(202, 194, 43);
+}

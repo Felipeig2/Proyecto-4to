@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="circulo.css">
+  <title>EJ Circulos</title>
+</head>
+<body>
+  <form action="submit" class="form"> 
+    <p><h3>Crea un circulo en donde quieras. Estará centrado en el punto (x, y) que decidas, y el radio (r) será el que decidas</h3> </p>
+    <label for="input-x" id="label-x">INGRESE <em>X</em></label> <br>
+    <input type="number" id="input-x" name="x"><br>
+    <label for="input-y" id="label-y">INGRESE <em>Y</em></label><br>
+    <input type="number" id="input-y" name="y"><br>
+    <label for="input-r" id="label-r">INGRESE <em>R</em></label><br>
+    <input type="number" id="input-r" name="r"><br>
+    <button type="submit">HACER</button>
+  </form>
+  <canvas id="myCanvas" width="1500" height="430"></canvas> 
+  <script src="circulo.js"></script>
+</body>
+</html>

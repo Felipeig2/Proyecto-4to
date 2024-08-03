@@ -1,0 +1,14 @@
+body{
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: cornflowerblue;
+}
+p{
+  font-size: 45px;
+}
+h1{
+  background-color: aquamarine;
+  margin-left: 550px;
+  margin-right: 550px;
+  border-radius: 5px;
+}

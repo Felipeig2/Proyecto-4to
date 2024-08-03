@@ -1,0 +1,126 @@
+body {
+    background-color: violet;
+    color: rgb(61, 49, 49);
+    text-align: left;
+
+}
+
+.ej2 {
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.ej3 {
+    background-color: aqua;
+    text-align: center;
+}
+
+.ej3:hover {
+    background-color: wheat
+}
+
+li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.Form{
+    margin: 5% 35% 5% 35%;
+    border: solid 10px red;
+
+}
+.Tit{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.env{
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+
+}
+.boton{
+    display: flex;
+    justify-content: center;
+
+}
+.arco div{
+    width: 400px;
+    height: 20px;
+    margin: 0 auto;
+  
+}
+.rojo{
+
+    background-color: red;
+
+    
+}
+.nara{
+    background-color: orange;
+
+}
+.amar{
+    background-color: yellow;
+
+}
+.verd{
+    background-color: green;
+
+}
+.blue{
+    background-color: blue;
+
+}
+.cele{
+    background-color: cyan;
+
+}
+.viol{
+    background-color: blueviolet;
+
+    margin-bottom: 10px;
+}
+.nada{
+    background-color: violet;
+    color: violet;
+}
+.icon {
+    font-size: 24px;
+    color: #4CAF50; /* Cambia el color de los iconos */
+    margin: 10px; /*oaa */
+}
+.imgz{
+    text-align: center;
+    border: 2px solid black;
+    margin: 20px 600px 20px 600px;
+    background-color: aquamarine;
+}
+.pap{
+    background-color: cornflowerblue;
+    color: black;
+    border-radius: 10px;
+    padding: 1px;
+
+}
+.pap:hover{
+    background-color: aliceblue;
+}
+.menu{
+        display: flex; /* Disponer los elementos en línea */
+        justify-content: center; /* Centrar los elementos horizontalmente */
+        background-color: #a23838; /* Color de fondo del menú */
+        padding: 10px 0; /* Espaciado vertical del menú */
+    }
+footer{
+    font-size: 30px;
+}
+main{
+    font-size: 45px;
+}
+.navcito{
+background-image: url('../img/groot.png');
+}
+.Luton.City{
+    text-align: center;
+}
