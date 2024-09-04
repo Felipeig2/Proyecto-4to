@@ -1,0 +1,19 @@
+body{
+  background-color: blueviolet;
+  text-align: center;
+}
+h1{
+  color: rgb(20, 20, 52);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
+}
+
+div{
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(185, 28, 144);
+  color: rgb(20, 20, 52);
+  font-size: 90px;
+  border-radius: 50px;
+  margin-left: 400px;
+  margin-right: 400px;
+}

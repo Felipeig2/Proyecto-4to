@@ -1,0 +1,28 @@
+#button{
+  font-size: 100px;
+  border-radius: 100px;
+  color: white;
+  background-color: white;
+}
+
+#button:hover{
+background-color: rgb(222, 221, 218);
+color: rgb(222, 221, 218);
+}
+
+body{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: coral;
+}
+h1{
+  font-size: 30px;
+}
+p{
+  font-size: 22px;
+}
+#div{
+  color: rgb(48, 45, 45);
+  margin-top: 40px;
+  font-size: 30px;
+}

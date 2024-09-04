@@ -5,6 +5,7 @@ let imagenesBanderas = [];
 
 let acierto = 0;
 let equivocacion = 0;
+let nombreCorrecto;
 
 function recuperarValores() {
   const aciertosGuardados = localStorage.getItem("aciertos");
@@ -44,7 +45,7 @@ function nowDoTheGame(nombresBanderas, imagenesBanderas) {
   let num_Al = Math.floor(Math.random() * nombresBanderas.length);
   let num_Al2 = Math.floor(Math.random() * nombresBanderas.length);
 
-  let nombreCorrecto = nombresBanderas[num_Al];
+  nombreCorrecto = nombresBanderas[num_Al];
   let banderaUrl = imagenesBanderas[num_Al];
 
   let nombreIncorrecto1;
@@ -82,65 +83,41 @@ function nowDoTheGame(nombresBanderas, imagenesBanderas) {
   button2.textContent = opciones[1];
   button3.textContent = opciones[2];
 
-  answerButton(nombreCorrecto, button1, button2, button3);
   mostrarLocalStorage();
 }
 
-function answerButton(nombreCorrecto, button1, button2, button3) {
-  function mostrarMensaje(mensaje) {
-    let h3_creado = document.querySelector('h3');
-    if (h3_creado) {
-      h3_creado.textContent = mensaje;
-    } else {
-      let div = document.createElement('div');
-      let h3 = document.createElement('h3');
-      h3.textContent = mensaje;
-      div.append(h3);
-      main.append(div);
-    }
-  }
-
-  button1.addEventListener('click', () => {
-    if (button1.textContent == nombreCorrecto) {
-      mostrarMensaje('¡Acertaste! La bandera correcta era: ' + nombreCorrecto);
-      acierto++;
-    } else {
-      mostrarMensaje('Incorrecto :(');
-      equivocacion++;
-    }
-    actualizarLocalStorage();
-  });
-
-  button2.addEventListener('click', () => {
-    if (button2.textContent == nombreCorrecto) {
-      mostrarMensaje('¡Acertaste! La bandera correcta era: ' + nombreCorrecto);
-      acierto++;
-    } else {
-      mostrarMensaje('Incorrecto :(');
-      equivocacion++;
-    }
-    actualizarLocalStorage();
-  });
-
-  button3.addEventListener('click', () => {
-    if (button3.textContent == nombreCorrecto) {
-      mostrarMensaje('¡Acertaste! La bandera correcta era: ' + nombreCorrecto);
-      acierto++;
-    } else {
-      mostrarMensaje('Incorrecto :(');
-      equivocacion++;
-    }
-    actualizarLocalStorage();
-  });
+function configurarBotones() {
+  button1.addEventListener('click', manejarRespuesta);
+  button2.addEventListener('click', manejarRespuesta);
+  button3.addEventListener('click', manejarRespuesta);
 }
 
-let nextButton = document.getElementById('nextButton');
+function manejarRespuesta(event) {
+  const botonPulsado = event.target;
+  if (botonPulsado.textContent == nombreCorrecto) {
+    mostrarMensaje('¡Acertaste! La bandera correcta era: ' + nombreCorrecto);
+    acierto++;
+  } else {
+    mostrarMensaje('Incorrecto :(');
+    equivocacion++;
+  }
+  actualizarLocalStorage();
+}
 
-nextButton.addEventListener('click', () => {
-  nowDoTheGame(nombresBanderas, imagenesBanderas);
-});
+function mostrarMensaje(mensaje) {
+  let h3_creado = document.querySelector('h3');
+  if (h3_creado) {
+    h3_creado.textContent = mensaje;
+  } else {
+    let div = document.createElement('div');
+    let h3 = document.createElement('h3');
+    h3.textContent = mensaje;
+    div.append(h3);
+    main.append(div);
+  }
+}
 
- function mostrarLocalStorage(){
+function mostrarLocalStorage() {
   let div_1 = document.createElement('div');
   let h4_1 = document.createElement('h4');
   h4_1.textContent = 'Aciertos: ' + acierto;
@@ -153,3 +130,11 @@ nextButton.addEventListener('click', () => {
   div2.append(h4_2);
   main.append(div2);
 }
+
+configurarBotones();
+
+let nextButton = document.getElementById('nextButton');
+
+nextButton.addEventListener('click', () => {
+  nowDoTheGame(nombresBanderas, imagenesBanderas);
+});
