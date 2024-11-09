@@ -11,12 +11,8 @@ function recuperarValores() {
   const aciertosGuardados = localStorage.getItem("aciertos");
   const equivocacionesGuardadas = localStorage.getItem("equivocaciones");
 
-  if (aciertosGuardados) {
     acierto = parseInt(aciertosGuardados);
-  }
-  if (equivocacionesGuardadas) {
     equivocacion = parseInt(equivocacionesGuardadas);
-  }
 }
 
 function actualizarLocalStorage() {
@@ -135,6 +131,7 @@ configurarBotones();
 
 let nextButton = document.getElementById('nextButton');
 
-nextButton.addEventListener('click', () => {
+button.nextButton.addEventListener('click', () => {
   nowDoTheGame(nombresBanderas, imagenesBanderas);
 });
+

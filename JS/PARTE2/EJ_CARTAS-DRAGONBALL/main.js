@@ -5,6 +5,8 @@ let array_personajes = [];
 pie = document.querySelector('.pie');
 
 const button = document.querySelector('.button');
+const button1 = document.querySelector('.button1');
+const button2 = document.querySelector('.button2');
 
 const container1 = document.querySelector('.container1');
 const container2 = document.querySelector('.container2');
@@ -36,8 +38,6 @@ fetch(url)
 
     let k_1 = eval(array_personajes[num_al1].ki.replaceAll(".",""));
     let k_2 = eval(array_personajes[num_al2].ki.replaceAll(".",""));
-
-   
 
     let nom_1 = array_personajes[num_al1].name;
     let nom_2 = array_personajes[num_al2].name;
@@ -78,13 +78,15 @@ fetch(url)
     carta2.append(nom2);
     carta2.append(foto2);
     container2.append(carta2);
-    compararKi(nom_1, nom_2, k_1, k_2);
+
+    setTimeout(() => {
+      compararKi(nom_1, nom_2, k_1, k_2);
+    }, 500);
   }
 
   function compararKi(nom_1, nom_2, k_1, k_2){
     console.log('k_1:', k_1);
     console.log('k_2:', k_2);
-  
 
     if (k_1 === 'unknown' || k_2 === 'unknown') {
       pie.textContent = 'NO HAY GANADOR';
@@ -96,3 +98,24 @@ fetch(url)
       pie.textContent = 'NO HAY GANADOR';
     }
   } 
+
+  button1.addEventListener("click", () => {
+    intervalID = setInterval(() => {
+      document.body.style.backgroundColor = colorRandom();
+      button.style.backgroundColor = colorRandom();
+      pie.style.backgroundColor = colorRandom();
+    }, 2000);
+  });
+
+ function colorRandom(){
+  let r = Math.floor(Math.random() *256);
+  let g = Math.floor(Math.random() *256);
+  let b = Math.floor(Math.random() *256);
+
+  return`rgb(${r}, ${g}, ${b})`;
+}
+
+
+button2.addEventListener('click', () => {
+  clearInterval(intervalID);
+});
