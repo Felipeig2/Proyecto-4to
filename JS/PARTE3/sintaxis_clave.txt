@@ -1,0 +1,53 @@
+		-- Crear un personaje --
+app.post('/api/characters', (req, res) => {
+  const { id, name, img, species } = req.body;
+  const newCharacter = new Character({ id, name, img, species });
+  newCharacter.save()
+    .then(character => res.status(201).json(character)); // responde 201 Created
+});
+
+		-- Eliminar un personaje (lo busca por id) --
+app.delete('/api/characters/:id', (req, res) => {
+  Character.deleteOne({ id: req.params.id })
+    .then(() => res.status(200).json({ msg: 'Character deleted!' }));
+});
+
+		-- Actualizar un personaje --
+app.put('/api/characters/:id', (req, res) => {
+  Character.findOneAndUpdate({ id: req.params.id }, req.body, { new: true })
+    .then(character => res.status(200).json(character));
+}); 
+
+		-- Buscar por ID un personaje --
+app.get('/api/characters/:id', (req, res) => {
+  Character.findOne({ id: req.params.id })
+    .then(character => res.status(200).json(character));
+});
+
+		-- Buscar por nombre --
+app.get('/api/characters/search/:name', (req, res) => {
+  Character.find({ name: { "$regex": req.params.name, "$options": "i" } })
+    .then(characters => res.status(200).json(characters));
+    // .catch(err => res.status(403).json({ err: err.message }));
+});
+
+		--Buscar todos los peronajes--
+app.get('/api/characters', (req, res) => {
+  Character.find()
+    .then(characters => res.status(200).json(characters)); // responde 200 OK
+});
+
+
+
+
+
+Objetivos para el miercoles:
+
+-Saber como hacer un get (por id, nombre, o lo que sea)   A
+-Saber como hacer un post                                 A 
+-Saber como hacer un put                                  A
+-Saber como hacer un delete                               A
+-Saber como hacer un characterSchema                      A 
+-Saber como usar los middleware                           X
+-Saber como poner los cosos del principio                 A
+
