@@ -1,10 +1,11 @@
 import mongoose from 'mongoose'
 
 const pjSchema = new mongoose.Schema({
-  nombre: {type: String, unique: true},
+  id: {type: Number, unique: true},
+  nombre: String,
   raza: String,
   clase: String,
-  spect: String,
+  spect: String
 });
 
 const pj = mongoose.model('pj', pjSchema);

@@ -1,20 +1,19 @@
+
 import controller from "../controllers/pjController.js";
-import express from 'express'
+import express from 'express';
 
 const router = express.Router();
 
-router.route("/")
+router.route("/pjs/:name")  
+    .get(controller.getPjByName);
+
+router.route("/pjs")
     .get(controller.getAllpjs)
     .post(controller.newPj);
 
-  router.route("/:id")
+router.route("/pjs/:id")
     .delete(controller.deletePj)
     .get(controller.getPjById)
     .put(controller.UpdatePj);
-    
-  router.route("/:name")
-  .get(controller.getPjByName)
 
-
-
-  export default router;
+export default router;

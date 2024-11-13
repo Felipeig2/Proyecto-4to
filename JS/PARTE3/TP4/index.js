@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3001
 mongoose.connect(DB)
   .then(() => {console.log('Database conected')});
 
-  app.use('/api/pjs', (router))
+  app.use('/api', router)
 
 
   app.use((req, res) =>{
